@@ -1,0 +1,64 @@
+Nonterminal,NUMERO,FLOTANTE,CADENA,BOOLEANO,LITERAL,IDENTIFICADOR,ENTERO,IMPRIMIR,RETORNAR,FUNCION,MIENTRAS,VERDADERO,FALSO,SI,SINO,OP_SUM,OP_RES,OP_MUL,OP_DIV,OP_MODU,OP_Y,OP_O,OP_MENOR,OP_MEIGUAL,OP_MAYOR,OP_MAIGUAL,OP_IGUAL,OP_DIGUAL,OP_DIST,OP_COM,OP_PCOMA,OP_IPARENT,OP_DPARENT,OP_ILLAV,OP_DLLAV,$
+programa,programa -> declaracion_lista,programa -> declaracion_lista,programa -> declaracion_lista,programa -> declaracion_lista,programa -> declaracion_lista,programa -> declaracion_lista,programa -> declaracion_lista,programa -> declaracion_lista,programa -> declaracion_lista,programa -> declaracion_lista,programa -> declaracion_lista,programa -> declaracion_lista,programa -> declaracion_lista,programa -> declaracion_lista,,,,,,,,,,,,,,,,,,programa -> declaracion_lista,,,,programa -> declaracion_lista
+declaracion_lista,declaracion_lista -> declaracion,declaracion_lista -> declaracion,declaracion_lista -> declaracion,declaracion_lista -> declaracion,declaracion_lista -> declaracion,declaracion_lista -> declaracion,declaracion_lista -> declaracion,declaracion_lista -> declaracion,declaracion_lista -> declaracion,declaracion_lista -> funcion_definicion,declaracion_lista -> mientras_declaracion,declaracion_lista -> declaracion,declaracion_lista -> declaracion,declaracion_lista -> declaracion,,,,,,,,,,,,,,,,,,declaracion_lista -> declaracion,,,,declaracion_lista -> declaracion
+declaracion,declaracion -> asignacion,declaracion -> asignacion,declaracion -> asignacion,declaracion -> asignacion,declaracion -> asignacion,declaracion -> asignacion,declaracion -> asignacion,declaracion -> imprimir_fun,declaracion -> retornar_declaracion,,,declaracion -> asignacion,declaracion -> asignacion,declaracion -> si_declaracion,,,,,,,,,,,,,,,,,,declaracion -> asignacion,,,declaracion -> asignacion,declaracion -> asignacion
+funcion_definicion,,,,,,,,,,funcion_definicion -> funcion identificador op_iparent param_lista op_dparent rep_funcion,,,,,,,,,,,,,,,,,,,,,,,,,,
+rep_funcion,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,rep_funcion -> op_illav declaracion op_dllav factor_f,,
+factor_f,factor_f -> asignacion,factor_f -> asignacion,factor_f -> asignacion,factor_f -> asignacion,factor_f -> asignacion,factor_f -> asignacion,factor_f -> asignacion,factor_f -> imprimir_fun,,factor_f -> funcion_definicion,factor_f -> mientras_declaracion,factor_f -> asignacion,factor_f -> asignacion,,,,,,,,,,,,,,,,,,,factor_f -> asignacion,,,,factor_f -> asignacion
+param_lista,param_lista -> expresion fact_param,param_lista -> expresion fact_param,param_lista -> expresion fact_param,param_lista -> expresion fact_param,param_lista -> expresion fact_param,param_lista -> expresion fact_param,param_lista -> expresion fact_param,,,,,param_lista -> expresion fact_param,param_lista -> expresion fact_param,,,,,,,,,,,,,,,,,,,param_lista -> expresion fact_param,param_lista -> '',,,
+fact_param,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,fact_param -> op_com expresion,,,fact_param -> '',,,
+retornar_declaracion,,,,,,,,,retornar_declaracion -> retornar op_iparent expresion op_dparent op_pcoma factor_rec,,,,,,,,,,,,,,,,,,,,,,,,,,,
+factor_rec,factor_rec -> asignacion,factor_rec -> asignacion,factor_rec -> asignacion,factor_rec -> asignacion,factor_rec -> asignacion,factor_rec -> asignacion,factor_rec -> asignacion,,factor_rec -> retornar_declaracion,,,factor_rec -> asignacion,factor_rec -> asignacion,,,,,,,,,,,,,,,,,,,factor_rec -> asignacion,factor_rec -> asignacion,,factor_rec -> asignacion,factor_rec -> asignacion
+si_declaracion,,,,,,,,,,,,,,si_declaracion -> si op_iparent expresion op_dparent op_illav declaracion op_dllav factor_si,,,,,,,,,,,,,,,,,,,,,,
+factor_si,,,,,,,,,,,,,,factor_si -> si_declaracion,factor_si -> sino op_illav declaracion op_dllav,,,,,,,,,,,,,,,,,,factor_si -> '',,factor_si -> '',factor_si -> ''
+mientras_declaracion,,,,,,,,,,,mientras_declaracion -> mientras op_iparent expresion op_dparent op_illav declaracion op_dllav factor,,,,,,,,,,,,,,,,,,,,,,,,,
+factor,factor -> asignacion,factor -> asignacion,factor -> asignacion,factor -> asignacion,factor -> asignacion,factor -> asignacion,factor -> asignacion,factor -> imprimir_fun,,,factor -> mientras_declaracion,factor -> asignacion,factor -> asignacion,,,,,,,,,,,,,,,,,,,factor -> asignacion,factor -> asignacion,,factor -> asignacion,factor -> asignacion
+asignacion,asignacion -> expresion asig_exp,asignacion -> expresion asig_exp,asignacion -> expresion asig_exp,asignacion -> expresion asig_exp,asignacion -> expresion asig_exp,asignacion -> expresion asig_exp,asignacion -> expresion asig_exp,,,,,asignacion -> expresion asig_exp,asignacion -> expresion asig_exp,,,,,,,,,,,,,,,,,,,asignacion -> expresion asig_exp,asignacion -> '',,asignacion -> '',asignacion -> ''
+asig_exp,asig_exp -> expresion asig_exp,asig_exp -> expresion asig_exp,asig_exp -> expresion asig_exp,asig_exp -> expresion asig_exp,asig_exp -> expresion asig_exp,asig_exp -> expresion asig_exp,asig_exp -> expresion asig_exp,,,,,asig_exp -> expresion asig_exp,asig_exp -> expresion asig_exp,,,,,,,,,,,,,,asig_exp -> factor_asig,,,asig_exp -> op_com asignacion,asig_exp -> factor_asig,asig_exp -> expresion asig_exp,asig_exp -> '',,asig_exp -> '',asig_exp -> ''
+factor_asig,,,,,,,,,,,,,,,,,,,,,,,,,,,factor_asig -> op_igual expresion asig_prueba op_pcoma asig_2,,,,factor_asig -> op_pcoma asig_2,,,,,
+asig_prueba,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,asig_prueba -> '',asig_prueba -> op_iparent expresion asig_exp op_dparent,,,,
+asig_2,asig_2 -> asignacion,asig_2 -> asignacion,asig_2 -> asignacion,asig_2 -> asignacion,asig_2 -> asignacion,asig_2 -> asignacion,asig_2 -> asignacion,asig_2 -> imprimir_fun,asig_2 -> retornar_declaracion,,asig_2 -> mientras_declaracion,asig_2 -> asignacion,asig_2 -> asignacion,asig_2 -> si_declaracion,,,,,,,,,,,,,,,,,,asig_2 -> asignacion,asig_2 -> asignacion,,asig_2 -> asignacion,asig_2 -> asignacion
+imprimir_fun,,,,,,,,imprimir_fun -> imprimir op_iparent expresion cuerpo_imp,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+cuerpo_imp,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,cuerpo_imp -> op_com expresion cuerpo_imp,,,cuerpo_imp -> op_dparent imp_seg,,,
+imp_seg,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,imp_seg -> op_pcoma asig_3,,,,,
+p_coma,p_coma -> asig_3,p_coma -> asig_3,p_coma -> asig_3,p_coma -> asig_3,p_coma -> asig_3,p_coma -> asig_3,p_coma -> asig_3,p_coma -> asig_3,,,p_coma -> asig_3,p_coma -> asig_3,p_coma -> asig_3,,,,,,,,,,,,,,,,,,,p_coma -> asig_3,,,,
+asig_3,asig_3 -> asignacion,asig_3 -> asignacion,asig_3 -> asignacion,asig_3 -> asignacion,asig_3 -> asignacion,asig_3 -> asignacion,asig_3 -> asignacion,asig_3 -> imprimir_fun,,,asig_3 -> mientras_declaracion,asig_3 -> asignacion,asig_3 -> asignacion,,,,,,,,,,,,,,,,,,,asig_3 -> asignacion,asig_3 -> asignacion,,asig_3 -> asignacion,asig_3 -> asignacion
+expresion,expresion -> operable exp_izq,expresion -> tipo identificador,expresion -> tipo identificador,expresion -> tipo identificador,expresion -> operable exp_izq,expresion -> operable exp_izq,expresion -> tipo identificador,,,,,expresion -> operable exp_izq,expresion -> operable exp_izq,,,,,,,,,,,,,,,,,,,expresion -> operable exp_izq,,,,
+tipo,,tipo -> flotante,tipo -> cadena,tipo -> booleano,,,tipo -> entero,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+operable,operable -> numero,,,,operable -> literal,operable -> identificador,,,,,,operable -> verdadero,operable -> falso,,,,,,,,,,,,,,,,,,,operable -> op_iparent expresion op_dparent,,,,
+exp_izq,exp_izq -> '',exp_izq -> '',exp_izq -> '',exp_izq -> '',exp_izq -> '',exp_izq -> '',exp_izq -> '',,,,,exp_izq -> '',exp_izq -> '',,,exp_izq -> op_sum expresion,exp_izq -> op_res expresion,exp_izq -> op_mul expresion,exp_izq -> op_div expresion,exp_izq -> op_modu expresion,exp_izq -> op_y expresion,exp_izq -> op_o expresion,exp_izq -> op_menor expresion,exp_izq -> op_meigual expresion,exp_izq -> op_mayor expresion,exp_izq -> op_maigual expresion,exp_izq -> '',exp_izq -> op_digual expresion,exp_izq -> op_dist expresion,exp_izq -> '',exp_izq -> '',exp_izq -> '',exp_izq -> '',,exp_izq -> '',exp_izq -> ''
+numero,numero -> NUMERO,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+flotante,,flotante -> FLOTANTE,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+cadena,,,cadena -> CADENA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+booleano,,,,booleano -> BOOLEANO,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+literal,,,,,literal -> LITERAL,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+identificador,,,,,,identificador -> IDENTIFICADOR,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+entero,,,,,,,entero -> ENTERO,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+imprimir,,,,,,,,imprimir -> IMPRIMIR,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+retornar,,,,,,,,,retornar -> RETORNAR,,,,,,,,,,,,,,,,,,,,,,,,,,,
+funcion,,,,,,,,,,funcion -> FUNCION,,,,,,,,,,,,,,,,,,,,,,,,,,
+mientras,,,,,,,,,,,mientras -> MIENTRAS,,,,,,,,,,,,,,,,,,,,,,,,,
+verdadero,,,,,,,,,,,,verdadero -> VERDADERO,,,,,,,,,,,,,,,,,,,,,,,,
+falso,,,,,,,,,,,,,falso -> FALSO,,,,,,,,,,,,,,,,,,,,,,,
+si,,,,,,,,,,,,,,si -> SI,,,,,,,,,,,,,,,,,,,,,,
+sino,,,,,,,,,,,,,,,sino -> SINO,,,,,,,,,,,,,,,,,,,,,
+op_sum,,,,,,,,,,,,,,,,op_sum -> OP_SUM,,,,,,,,,,,,,,,,,,,,
+op_res,,,,,,,,,,,,,,,,,op_res -> OP_RES,,,,,,,,,,,,,,,,,,,
+op_mul,,,,,,,,,,,,,,,,,,op_mul -> OP_MUL,,,,,,,,,,,,,,,,,,
+op_div,,,,,,,,,,,,,,,,,,,op_div -> OP_DIV,,,,,,,,,,,,,,,,,
+op_modu,,,,,,,,,,,,,,,,,,,,op_modu -> OP_MODU,,,,,,,,,,,,,,,,
+op_y,,,,,,,,,,,,,,,,,,,,,op_y -> OP_Y,,,,,,,,,,,,,,,
+op_o,,,,,,,,,,,,,,,,,,,,,,op_o -> OP_O,,,,,,,,,,,,,,
+op_menor,,,,,,,,,,,,,,,,,,,,,,,op_menor -> OP_MENOR,,,,,,,,,,,,,
+op_meigual,,,,,,,,,,,,,,,,,,,,,,,,op_meigual -> OP_MEIGUAL,,,,,,,,,,,,
+op_mayor,,,,,,,,,,,,,,,,,,,,,,,,,op_mayor -> OP_MAYOR,,,,,,,,,,,
+op_maigual,,,,,,,,,,,,,,,,,,,,,,,,,,op_maigual -> OP_MAIGUAL,,,,,,,,,,
+op_igual,,,,,,,,,,,,,,,,,,,,,,,,,,,op_igual -> OP_IGUAL,,,,,,,,,
+op_digual,,,,,,,,,,,,,,,,,,,,,,,,,,,,op_digual -> OP_DIGUAL,,,,,,,,
+op_dist,,,,,,,,,,,,,,,,,,,,,,,,,,,,,op_dist -> OP_DIST,,,,,,,
+op_com,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,op_com -> OP_COM,,,,,,
+op_pcoma,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,op_pcoma -> OP_PCOMA,,,,,
+op_iparent,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,op_iparent -> OP_IPARENT,,,,
+op_dparent,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,op_dparent -> OP_DPARENT,,,
+op_illav,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,op_illav -> OP_ILLAV,,
+op_dllav,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,op_dllav -> OP_DLLAV,

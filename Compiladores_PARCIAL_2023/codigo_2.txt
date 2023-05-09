@@ -1,0 +1,4 @@
+funcion tarea(entero x, entero y){
+    entero a = x;
+    entero b = y;
+}

@@ -1,0 +1,4 @@
+booleano identificador ;
+si ( id == falso ){
+    imprimir(id);
+}

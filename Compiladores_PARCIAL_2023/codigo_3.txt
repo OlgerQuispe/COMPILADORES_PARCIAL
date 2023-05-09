@@ -1,0 +1,3 @@
+mientras (id == 123){
+        imprimir(id);
+}
