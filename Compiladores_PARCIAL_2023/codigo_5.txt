@@ -1,0 +1,5 @@
+funcion id ( booleano id ){
+    si ( id == falso ){
+        imprimir(id);
+    }
+}

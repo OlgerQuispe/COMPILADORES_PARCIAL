@@ -1,0 +1,399 @@
+digraph G { 
+1 [ label=" programa " ]; 
+3 [ label=" declaracion_lista " ]; 
+4 [ label=" funcion_definicion " ]; 
+5 [ label=" rep_funcion " ]; 
+6 [ label=" op_dparent " ]; 
+7 [ label=" param_lista " ]; 
+8 [ label=" op_iparent " ]; 
+9 [ label=" identificador " ]; 
+10 [ label=" funcion " ]; 
+11 [ label=< <b>FUNCION</b> <br/>funcion <br/> line 1 > ]; 
+12 [ label=< <b>IDENTIFICADOR</b> <br/>id <br/> line 1 > ]; 
+13 [ label=< <b>OP_IPARENT</b> <br/>( <br/> line 1 > ]; 
+14 [ label=" fact_param " ]; 
+15 [ label=" expresion " ]; 
+16 [ label=" identificador " ]; 
+17 [ label=" tipo " ]; 
+18 [ label=" booleano " ]; 
+19 [ label=< <b>BOOLEANO</b> <br/>booleano <br/> line 1 > ]; 
+20 [ label=< <b>IDENTIFICADOR</b> <br/>id <br/> line 1 > ]; 
+21 [ label=< <b>OP_DPARENT</b> <br/>) <br/> line 1 > ]; 
+22 [ label=" factor_f " ]; 
+23 [ label=" op_dllav " ]; 
+24 [ label=" declaracion " ]; 
+25 [ label=" op_illav " ]; 
+26 [ label=< <b>OP_ILLAV</b> <br/>{ <br/> line 1 > ]; 
+27 [ label=" si_declaracion " ]; 
+28 [ label=" factor_si " ]; 
+29 [ label=" op_dllav " ]; 
+30 [ label=" declaracion " ]; 
+31 [ label=" op_illav " ]; 
+32 [ label=" op_dparent " ]; 
+33 [ label=" expresion " ]; 
+34 [ label=" op_iparent " ]; 
+35 [ label=" si " ]; 
+36 [ label=< <b>SI</b> <br/>si <br/> line 2 > ]; 
+37 [ label=< <b>OP_IPARENT</b> <br/>( <br/> line 2 > ]; 
+38 [ label=" exp_izq " ]; 
+39 [ label=" operable " ]; 
+40 [ label=" identificador " ]; 
+41 [ label=< <b>IDENTIFICADOR</b> <br/>id <br/> line 2 > ]; 
+42 [ label=" expresion " ]; 
+43 [ label=" op_digual " ]; 
+44 [ label=< <b>OP_DIGUAL</b> <br/>== <br/> line 2 > ]; 
+45 [ label=" exp_izq " ]; 
+46 [ label=" operable " ]; 
+47 [ label=" falso " ]; 
+48 [ label=< <b>FALSO</b> <br/>falso <br/> line 2 > ]; 
+49 [ label=< <b>OP_DPARENT</b> <br/>) <br/> line 2 > ]; 
+50 [ label=< <b>OP_ILLAV</b> <br/>{ <br/> line 2 > ]; 
+51 [ label=" imprimir_fun " ]; 
+52 [ label=" cuerpo_imp " ]; 
+53 [ label=" expresion " ]; 
+54 [ label=" op_iparent " ]; 
+55 [ label=" imprimir " ]; 
+56 [ label=< <b>IMPRIMIR</b> <br/>imprimir <br/> line 3 > ]; 
+57 [ label=< <b>OP_IPARENT</b> <br/>( <br/> line 3 > ]; 
+58 [ label=" exp_izq " ]; 
+59 [ label=" operable " ]; 
+60 [ label=" identificador " ]; 
+61 [ label=< <b>IDENTIFICADOR</b> <br/>id <br/> line 3 > ]; 
+62 [ label=" imp_seg " ]; 
+63 [ label=" op_dparent " ]; 
+64 [ label=< <b>OP_DPARENT</b> <br/>) <br/> line 3 > ]; 
+65 [ label=" asig_3 " ]; 
+66 [ label=" op_pcoma " ]; 
+67 [ label=< <b>OP_PCOMA</b> <br/>; <br/> line 3 > ]; 
+68 [ label=" asignacion " ]; 
+69 [ label=< <b>OP_DLLAV</b> <br/>} <br/> line 4 > ]; 
+70 [ label=< <b>OP_DLLAV</b> <br/>} <br/> line 5 > ]; 
+71 [ label=" asignacion " ]; 
+1 -> 3; 
+3 -> 4; 
+4 -> 10; 
+10 -> 11; 
+{ 
+    rank = same; 
+    edge[ style=invis]; 
+11; 
+    rankdir = LR; 
+} 
+4 -> 9; 
+9 -> 12; 
+{ 
+    rank = same; 
+    edge[ style=invis]; 
+12; 
+    rankdir = LR; 
+} 
+4 -> 8; 
+8 -> 13; 
+{ 
+    rank = same; 
+    edge[ style=invis]; 
+13; 
+    rankdir = LR; 
+} 
+4 -> 7; 
+7 -> 15; 
+15 -> 17; 
+17 -> 18; 
+18 -> 19; 
+{ 
+    rank = same; 
+    edge[ style=invis]; 
+19; 
+    rankdir = LR; 
+} 
+{ 
+    rank = same; 
+    edge[ style=invis]; 
+18; 
+    rankdir = LR; 
+} 
+15 -> 16; 
+16 -> 20; 
+{ 
+    rank = same; 
+    edge[ style=invis]; 
+20; 
+    rankdir = LR; 
+} 
+{ 
+    rank = same; 
+    edge[ style=invis]; 
+17 -> 16; 
+    rankdir = LR; 
+} 
+7 -> 14; 
+{ 
+    rank = same; 
+    edge[ style=invis]; 
+15 -> 14; 
+    rankdir = LR; 
+} 
+4 -> 6; 
+6 -> 21; 
+{ 
+    rank = same; 
+    edge[ style=invis]; 
+21; 
+    rankdir = LR; 
+} 
+4 -> 5; 
+5 -> 25; 
+25 -> 26; 
+{ 
+    rank = same; 
+    edge[ style=invis]; 
+26; 
+    rankdir = LR; 
+} 
+5 -> 24; 
+24 -> 27; 
+27 -> 35; 
+35 -> 36; 
+{ 
+    rank = same; 
+    edge[ style=invis]; 
+36; 
+    rankdir = LR; 
+} 
+27 -> 34; 
+34 -> 37; 
+{ 
+    rank = same; 
+    edge[ style=invis]; 
+37; 
+    rankdir = LR; 
+} 
+27 -> 33; 
+33 -> 39; 
+39 -> 40; 
+40 -> 41; 
+{ 
+    rank = same; 
+    edge[ style=invis]; 
+41; 
+    rankdir = LR; 
+} 
+{ 
+    rank = same; 
+    edge[ style=invis]; 
+40; 
+    rankdir = LR; 
+} 
+33 -> 38; 
+38 -> 43; 
+43 -> 44; 
+{ 
+    rank = same; 
+    edge[ style=invis]; 
+44; 
+    rankdir = LR; 
+} 
+38 -> 42; 
+42 -> 46; 
+46 -> 47; 
+47 -> 48; 
+{ 
+    rank = same; 
+    edge[ style=invis]; 
+48; 
+    rankdir = LR; 
+} 
+{ 
+    rank = same; 
+    edge[ style=invis]; 
+47; 
+    rankdir = LR; 
+} 
+42 -> 45; 
+{ 
+    rank = same; 
+    edge[ style=invis]; 
+46 -> 45; 
+    rankdir = LR; 
+} 
+{ 
+    rank = same; 
+    edge[ style=invis]; 
+43 -> 42; 
+    rankdir = LR; 
+} 
+{ 
+    rank = same; 
+    edge[ style=invis]; 
+39 -> 38; 
+    rankdir = LR; 
+} 
+27 -> 32; 
+32 -> 49; 
+{ 
+    rank = same; 
+    edge[ style=invis]; 
+49; 
+    rankdir = LR; 
+} 
+27 -> 31; 
+31 -> 50; 
+{ 
+    rank = same; 
+    edge[ style=invis]; 
+50; 
+    rankdir = LR; 
+} 
+27 -> 30; 
+30 -> 51; 
+51 -> 55; 
+55 -> 56; 
+{ 
+    rank = same; 
+    edge[ style=invis]; 
+56; 
+    rankdir = LR; 
+} 
+51 -> 54; 
+54 -> 57; 
+{ 
+    rank = same; 
+    edge[ style=invis]; 
+57; 
+    rankdir = LR; 
+} 
+51 -> 53; 
+53 -> 59; 
+59 -> 60; 
+60 -> 61; 
+{ 
+    rank = same; 
+    edge[ style=invis]; 
+61; 
+    rankdir = LR; 
+} 
+{ 
+    rank = same; 
+    edge[ style=invis]; 
+60; 
+    rankdir = LR; 
+} 
+53 -> 58; 
+{ 
+    rank = same; 
+    edge[ style=invis]; 
+59 -> 58; 
+    rankdir = LR; 
+} 
+51 -> 52; 
+52 -> 63; 
+63 -> 64; 
+{ 
+    rank = same; 
+    edge[ style=invis]; 
+64; 
+    rankdir = LR; 
+} 
+52 -> 62; 
+62 -> 66; 
+66 -> 67; 
+{ 
+    rank = same; 
+    edge[ style=invis]; 
+67; 
+    rankdir = LR; 
+} 
+62 -> 65; 
+65 -> 68; 
+{ 
+    rank = same; 
+    edge[ style=invis]; 
+68; 
+    rankdir = LR; 
+} 
+{ 
+    rank = same; 
+    edge[ style=invis]; 
+66 -> 65; 
+    rankdir = LR; 
+} 
+{ 
+    rank = same; 
+    edge[ style=invis]; 
+63 -> 62; 
+    rankdir = LR; 
+} 
+{ 
+    rank = same; 
+    edge[ style=invis]; 
+55 -> 54 -> 53 -> 52; 
+    rankdir = LR; 
+} 
+{ 
+    rank = same; 
+    edge[ style=invis]; 
+51; 
+    rankdir = LR; 
+} 
+27 -> 29; 
+29 -> 69; 
+{ 
+    rank = same; 
+    edge[ style=invis]; 
+69; 
+    rankdir = LR; 
+} 
+27 -> 28; 
+{ 
+    rank = same; 
+    edge[ style=invis]; 
+35 -> 34 -> 33 -> 32 -> 31 -> 30 -> 29 -> 28; 
+    rankdir = LR; 
+} 
+{ 
+    rank = same; 
+    edge[ style=invis]; 
+27; 
+    rankdir = LR; 
+} 
+5 -> 23; 
+23 -> 70; 
+{ 
+    rank = same; 
+    edge[ style=invis]; 
+70; 
+    rankdir = LR; 
+} 
+5 -> 22; 
+22 -> 71; 
+{ 
+    rank = same; 
+    edge[ style=invis]; 
+71; 
+    rankdir = LR; 
+} 
+{ 
+    rank = same; 
+    edge[ style=invis]; 
+25 -> 24 -> 23 -> 22; 
+    rankdir = LR; 
+} 
+{ 
+    rank = same; 
+    edge[ style=invis]; 
+10 -> 9 -> 8 -> 7 -> 6 -> 5; 
+    rankdir = LR; 
+} 
+{ 
+    rank = same; 
+    edge[ style=invis]; 
+4; 
+    rankdir = LR; 
+} 
+{ 
+    rank = same; 
+    edge[ style=invis]; 
+3; 
+    rankdir = LR; 
+} 
+}
